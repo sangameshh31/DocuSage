@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DocuSage — Ask your documents</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">DS</div>
+    <div>
+      <h1>DocuSage</h1>
+      <p>Ask questions, get answers grounded in your documents — with citations.</p>
+    </div>
+  </div>
+  <div id="statusPill" class="pill pill-muted">connecting…</div>
+</header>
+
+<main class="layout">
+
+  <section class="column">
+    <div class="card">
+      <h2>Upload a document</h2>
+      <p class="hint">PDF or plain text (.pdf, .txt, .md), up to 25 MB. It is chunked, embedded and indexed immediately.</p>
+      <label id="dropZone" class="dropzone">
+        <input type="file" id="fileInput" accept=".pdf,.txt,.md,application/pdf,text/plain" hidden>
+        <span id="dropLabel">Click to choose a file, or drop it here</span>
+      </label>
+      <button id="uploadBtn" class="btn btn-primary" disabled>Upload &amp; index</button>
+      <p id="uploadMsg" class="msg"></p>
+    </div>
+
+    <div class="card">
+      <h2>Your documents</h2>
+      <p class="hint">Click a document to ask questions about it alone, or ask across all of them.</p>
+      <ul id="docList" class="doc-list"></ul>
+      <p id="docEmpty" class="hint">No documents yet — upload one to get started.</p>
+    </div>
+  </section>
+
+  <section class="column">
+    <div class="card">
+      <h2>Ask a question</h2>
+      <p class="hint">Searching: <strong id="scopeLabel">all documents</strong></p>
+      <div class="ask-row">
+        <input type="text" id="questionInput" placeholder="e.g. What does the document say about renewals?">
+        <button id="askBtn" class="btn btn-primary">Ask</button>
+      </div>
+      <p id="askMsg" class="msg"></p>
+    </div>
+
+    <div id="answerCard" class="card hidden">
+      <h2>Answer</h2>
+      <p id="answerText" class="answer"></p>
+      <h3>Sources</h3>
+      <div id="citationList"></div>
+      <p id="providerLine" class="hint"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  DocuSage · Java 17 · Spring Boot 3 · hand-rolled vector index ·
+  <a href="/api/health" target="_blank" rel="noopener">API health</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+services:
+  docusage:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # Persist data in a file-based H2 database on the mounted volume
+      # (the default in-memory database resets on every restart).
+      SPRING_DATASOURCE_URL: jdbc:h2:file:/data/docusage
+      # Optional: set this and switch both providers to "gemini" in
+      # application.properties to enable real AI embeddings and answers.
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    volumes:
+      - docusage-data:/data
+
+volumes:
+  docusage-data:
