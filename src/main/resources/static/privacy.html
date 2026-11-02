@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy, DocuSage</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">DS</div>
+    <div>
+      <h1>DocuSage</h1>
+      <p>Ask questions, get answers grounded in your documents, with citations.</p>
+    </div>
+  </div>
+  <a class="btn btn-primary" href="index.html">Back to the app</a>
+</header>
+
+<main class="layout">
+  <section class="column">
+    <div class="card">
+      <h2>Privacy Policy</h2>
+      <p class="hint">DocuSage lets you upload documents and ask questions about them. This page says plainly what happens to what you upload.</p>
+
+      <h3>What you upload</h3>
+      <p>PDF, plain text, and markdown files up to 25 MB. Each file is split into chunks, turned into embeddings, and indexed so questions can be answered with citations.</p>
+
+      <h3>Where it is stored</h3>
+      <p>Uploads, chunks, and embeddings are held in an embedded in-memory database on the server. They are not written to disk, and they do not survive a service restart. The hosted demo sleeps when idle, so a restart clears everything you uploaded.</p>
+
+      <h3>Deletion</h3>
+      <p>You can delete a document and all of its chunks at any time, using the delete control next to it in the document list.</p>
+
+      <h3>External AI services</h3>
+      <p>By default, DocuSage runs fully locally: embeddings use feature hashing and answers are extracted passages, so no document text leaves the server. If the Gemini providers are enabled instead, document text is sent to Google's Gemini API and is subject to Google's policies.</p>
+
+      <h3>What is not collected</h3>
+      <p>DocuSage sets no tracking cookies, stores nothing in your browser, and runs no analytics.</p>
+
+      <h3>Hosting</h3>
+      <p>The demo is hosted on Render. Render's own policies apply to its hosting infrastructure.</p>
+
+      <h3>Changes and contact</h3>
+      <p>This page may be updated from time to time. The version published here is the current one. Questions about it can be sent to the email address on the owner's portfolio contact page.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  DocuSage · Java 17 · Spring Boot 3 · hand-rolled vector index ·
+  <a href="privacy.html">Privacy Policy</a> ·
+  <a href="terms.html">Terms and Conditions</a> ·
+  <a href="/api/health" target="_blank" rel="noopener">API health</a>
+</footer>
+
+</body>
+</html>
